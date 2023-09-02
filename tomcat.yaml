@@ -1,13 +1,14 @@
 - name: "Install Tomcat9 on webserver"
   hosts: web
+  become: true
   tasks:
-          - name: "tomcat9"
-            apt:
-                    name: tomcat9
-                    name: tomcat9-admin
-                    name: tomcat9-common
-                    name: tomcat9-docs
-                    name: tomcat9-examples
-                    name: tomcat9-user
-                    update_cache: yes
-            state: present
+  - name: "tomcat9"
+    apt:
+      update_cache: yes
+      name: tomcat9
+      name: tomcat9-admin
+      name: tomcat9-common
+      name: tomcat9-docs
+      name: tomcat9-examples
+      name: tomcat9-user
+      state: present
