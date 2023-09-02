@@ -2,13 +2,15 @@
   hosts: web
   become: true
   tasks:
-  - name: "tomcat9"
+  - name: "Update APT Cache"
     apt:
       update_cache: yes
-      name: tomcat9
-      name: tomcat9-admin
-      name: tomcat9-common
-      name: tomcat9-docs
-      name: tomcat9-examples
-      name: tomcat9-user
-      state: present
+  - name: "Install Tomcat 9 all"
+    apt:
+      - name: tomcat9
+      - name: tomcat9-admin
+      - name: tomcat9-common
+      - name: tomcat9-docs
+      - name: tomcat9-examples
+      - name: tomcat9-user
+    state: present
