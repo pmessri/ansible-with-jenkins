@@ -1,1 +1,12 @@
-
+- name: "Deploy WAR on webserver"
+  hosts: web
+  become: true
+  tasks:
+  - name: "Copy tomcat-users xml for manager"
+    copy:
+      src: "{{ playbook_dir }}/../3-CompileWAR/target/addressbook-2.0.war"
+      dest: /var/lib/tomcat9/webapps/
+  - name: "Restart Tomcat 9"
+    systemd:
+      name: tomcat9
+      state: restarted
