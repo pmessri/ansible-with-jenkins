@@ -7,10 +7,11 @@
       update_cache: yes
   - name: "Install Tomcat 9 all"
     apt:
-      - name: tomcat9
-      - name: tomcat9-admin
-      - name: tomcat9-common
-      - name: tomcat9-docs
-      - name: tomcat9-examples
-      - name: tomcat9-user
-    state: present
+      name:
+        - tomcat9
+        - tomcat9-admin
+        - tomcat9-common
+        - tomcat9-docs
+        - tomcat9-examples
+        - tomcat9-user
+      state: present
