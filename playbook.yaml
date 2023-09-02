@@ -1,13 +1,12 @@
-- name: "manage worker1 and 2"
-  hosts: all
+- name: "Install Maven on Provisioning server"
+  hosts: localhost
   become: true
   tasks:
-  - name: "ensure Amit user exists"
-    user:
-      name: amit
-      state: absent
-  - name: "ensure Alex user exists"
-    user:
-      name: alex
-      state: absent
-      
+  - name: "Update APT Cache"
+    apt:
+      update_cache: yes
+  - name: "Install Maven"
+    apt:
+      name:
+        - maven
+      state: present
