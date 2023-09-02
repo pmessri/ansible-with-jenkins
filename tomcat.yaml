@@ -15,3 +15,11 @@
         - tomcat9-examples
         - tomcat9-user
       state: present
+    - name: "Copy tomcat-users xml for manager"
+      copy:
+        src: {{ playbook_dir }}/tomcat-users.xml
+        dest: /var/lib/tomcat9/conf/
+    - name: "Restart Tomcat 9"
+      systemd:
+        name: tomcat9
+        state: restarted
