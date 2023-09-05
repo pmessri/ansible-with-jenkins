@@ -4,7 +4,7 @@
   tasks:
   - name: "Copy tomcat-users xml for manager"
     copy:
-      src: "{{ playbook_dir }}/../3- Compile WAR addressbook project and Deploy/target/addressbook-2.0.war"
+      src: "{{ playbook_dir }}/../03- Create AddressBook Project/target/addressbook-2.0.war"
       dest: /var/lib/tomcat9/webapps/
   - name: "Restart Tomcat 9"
     systemd:
