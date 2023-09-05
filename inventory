@@ -1,1 +1,1 @@
-web ansible_host=ip-172-31-45-210
+web ansible_host=ip-172-31-45-210 ansible_user=root
